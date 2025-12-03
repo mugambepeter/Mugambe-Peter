@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bubuuno Shop price Estimater</title>
+  <style>
+  body {
+    font-family:times new roman,sans-serif;
+    background:blue;
+    padding: 25px;
+  }
+  container{
+    width:300px;
+    margin:25px;30px
+    background:orange;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:square;
+  }
+  h2{
+    text-align:center;
+    color: #333;
+  }
+  label{
+    display:block;
+    margin-top: 10px
+    font-weight: bold
+  }
+  input{
+    width:100%;
+    padding:8px;
+    margin-top: 5px
+    border:1pxsolid #ccc;
+    border-radius:5px;
+  }
+  button{
+    width:100%;
+    padding:10px;
+    margin-top:15px;
+    background:green;
+    color:white;
+    border:none;
+    border-radius:5px
+    cursor:pointee;
+    font-size: 18px
+    display: none;
+  }
+  button:hover{
+    background: black;
+  }
+  #outout{
+    margin: 30px
+    padding:10px
+    background:#e7f5e7
+    border-left:4ox solid;
+    border-radius:5px
+    font-size:10px
+  </style>
+</head>
+<body>
+
+    <h1>Bubuno shop price Estimater</h1>
+
+    <div class="container">
+
+        <label>Bread (UGX 3,000 each):</label>
+        <input type="number" id="bread" placeholder="Enter quantity">
+
+        <label>Milk (UGX 2,500 each):</label>
+        <input type="number" id="milk" placeholder="Enter quantity">
+
+        <label>Eggs (UGX 500 each):</label>
+        <input type="number" id="eggs" placeholder="Enter quantity">
+
+        <button onclick="calculateTotal()">Calculate Total</button>
+
+        <h2 id="result"></h2> 
+
+    </div>
+
+    
+    <script>
+        function calculateTotal() {
+            let bread = document.getElementById("bread").value;
+            let milk = document.getElementById("milk").value;
+            let eggs = document.getElementById("eggs").value;
+
+            
+            if (bread === "" || milk === "" || eggs === "") {
+                document.getElementById("result").innerHTML = "⚠ Please fill in all fields!";
+                return;
+            }
+            if (bread < 0 || milk < 0 || eggs < 0) {
+                document.getElementById("result").innerHTML = "⚠ Quantities cannot be negative!";
+                return;
+            }
+
+          
+            bread = parseInt(bread);
+            milk = parseInt(milk);
+            eggs = parseInt(eggs);
+
+           
+            let total = (bread *
